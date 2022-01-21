@@ -1,5 +1,6 @@
 const yargs = require('yargs')
-
+const note = require('./note.js')
+const notes = require('./note.js')
 //Create add command
 
 yargs.command({
@@ -18,8 +19,7 @@ yargs.command({
     },
   },
   handler: function (argv) {
-    console.log('Title: ' + argv.title)
-    console.log('Body: ' + argv.body)
+    note.addNote(argv.title, argv.body)
   },
 })
 
